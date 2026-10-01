@@ -39,7 +39,15 @@ VALIDATE $? "Enabling mysql-server"
 systemctl start mysqld           &>>$LOG_FILE
 VALIDATE $? "Starting mysql-server"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
-VALIDATE $? "Setting root-pass"
+mysql -h mysql.muntaj.fun -uroot -pExpenseApp@1 -e 'show databases;'   &>>$LOG_FILE
+if [ $? -ne 0 ]
+then
+    echo -e "mysql $Y root password $N is not setted.. $G setting it $N" | tee -a $LOG_FILE
+    mysql_secure_installation --set-root-pass ExpenseApp@1
+    VALIDATE $? "Setting mysql root password"
+else
+    echo -e "mysql root password is $G already setted..SKIP IT $N"  | tee -a $LOG_FILE
+fi
+
 
 
