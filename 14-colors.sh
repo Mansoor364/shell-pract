@@ -41,7 +41,7 @@ do
     if [ $? -ne 0 ]
     then
         echo -e "$package is not installed.. $Y going to install it..$N"
-        dnf install $package
+        dnf install $package -y
         VALIDATE $? "Installing $package"
     else
         echo -e "$package is already $Y installed nothing to do $N"
