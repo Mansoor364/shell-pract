@@ -12,14 +12,14 @@ CHECK_ROOT(){
     USERID=$(id -u)
     if [ $USERID -ne 0 ]
     then
-        echo -e "$R please run the script with root user privileges$N" 
+        echo -e "$R please run the script with root user privileges$N"
         exit 1
     fi
 }
 CHECK_ROOT
 
 USAGE(){
-    echo -e "$R USAGE::$N $Y sudo sh 15-redirection.sh package1 package2..$N"  | tee -a $LOG_FILE
+    echo -e "$R USAGE::$N $Y sudo sh 15-redirection.sh package1 package2..$N"  
     exit 1
 }
 
