@@ -12,7 +12,7 @@ CHECK_ROOT(){
     USERID=$(id -u)
     if [ $USERID -ne 0 ]
     then
-        echo -e "$R please run the script with root user privileges$N" | tee -a $LOG_FILE
+        echo -e "$R please run the script with root user privileges$N" 
         exit 1
     fi
 }
