@@ -8,6 +8,8 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIME_STAMP.log"
 
+mkdir -p $LOGS_FOLDER  &>>$LOG_FILE
+
 CHECK_ROOT(){
     USERID=$(id -u)
     if [ $USERID -ne 0 ]
@@ -27,8 +29,6 @@ if [ $# -eq 0 ]
 then
     USAGE
 fi
-
-mkdir -p $LOGS_FOLDER  &>>$LOG_FILE
 
 echo -e "Script started executing at: $G $(date) $N "  | tee -a $LOG_FILE
 
