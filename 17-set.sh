@@ -7,7 +7,7 @@ failure(){
     echo "failed at : $1:$2"
 }
 
-trap 'failure "${LINENO}" "$BASH_COMMAND"'ERR
+trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR
 echo "Hello world - Sucess"
 echoooooo "Hello world --failure"
 echo "Hello world -after failure"
