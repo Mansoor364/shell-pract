@@ -15,9 +15,9 @@ else
 fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
-echo -e "$Y log files older than 14 days are $N : $FILES"
+echo -e "$Y LOG files older than 14 days are $N : $FILES"
 
-while IFS= read -r file
+while IFS=read -r file
 do
     echo "deleting files : $file"
     rm -rf $file
