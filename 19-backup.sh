@@ -43,7 +43,7 @@ then
     if [ -f $ZIP_FILE ]
     then
         echo -e "log files older than $DAYS are $G zipped successfully $N"
-        while IFS=read -r file
+        while IFS= read -r file
         do
             echo -e "$Y deleting file:$N $file"
             rm -rf $file
