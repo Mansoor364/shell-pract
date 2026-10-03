@@ -34,7 +34,7 @@ fi
 FILES=$(find $SOUR_DIR -name "*.log" -mtime $DAYS)
 echo "log files are : $FILES"
 
-if [ ! -z $FILES ]
+if [ ! -Z $FILES ]
 then
     echo -e "LOG files older than $G $DAYS are exist $N"
     ZIP_FILE="$DEST_DIR/app-log-$TIME_STAMP.zip"
