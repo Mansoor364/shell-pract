@@ -8,6 +8,7 @@ failure(){
 }
 
 trap 'failure "${LINENO}" "$BASH_COMMAND"' ERR
+
 echo "Hello world - Sucess"
 echoooooo "Hello world --failure"
 echo "Hello world -after failure"
